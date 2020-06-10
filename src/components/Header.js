@@ -7,6 +7,8 @@ import React from 'react'
 
     return (
     <div>
+        <div><h1>Starviewer</h1></div>
+        
         <p>{date}</p>
     </div>
     )
