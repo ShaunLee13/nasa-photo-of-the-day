@@ -1,8 +1,17 @@
 import React from "react";
 import "./App.css";
 import axios from 'axios'
+import { nasaURL, apiKey } from './constants'
 
-axios.get('https://api.nasa.gov/planetary/apod?api_key=')
+axios.get(`${nasaURL}?api_key=${apiKey}`)
+  .then(res => {
+    console.log(`Here is your results: ${res}`)
+    debugger
+  })
+  .catch(err => {
+    console.log(err)
+    debugger
+  })
 
 function App() {
   return (
