@@ -5,6 +5,7 @@ import { nasaURL, apiKey } from './constants'
 import Header from './components/Header'
 import SearchBar from './components/SearchBar'
 import ImageDisplay from './components/ImageDisplay'
+import { Container, Divider } from 'semantic-ui-react'
 
 
 
@@ -23,16 +24,14 @@ function App() {
   },[])
 
   return (
-    <div className="App">
+    <Container text className='App'>
       <Header />
-      <SearchBar />
+      <SearchBar/>
+      <Divider />
       <ImageDisplay data={pixData}/>
-      <p>
-        Read through the instructions in the README.md file to build your NASA
-        app! Have fun <span role="img" aria-label='go!'>🚀</span>!
-      </p>
+      <Divider />
       <p>Starviewer Copyright 2020 Shaun Lee </p>
-    </div>
+    </Container>
   );
 }
 

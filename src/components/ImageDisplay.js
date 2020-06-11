@@ -1,19 +1,20 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
-import React, { useState } from 'react'
+import React from 'react'
+import { Container, Image } from 'semantic-ui-react'
 
 const ImageDisplay = (props) => {
     const { data } = props
 
     // return null
     return (
-        <div>
+        <Container>
         <p>Picture of the Day for: {data.date} </p>
-        <img src={data.url} alt='Image of the Day' />
+        <Image src={data.url} alt='Image of the Day' size='large' centered/>
         <a href={data.hdurl} target='_blank' rel='noopener noreferrer'>Click to view this image in HD!</a>
-        <p>Title: {data.title}</p>
-        <p>Image copyrighted by {data.copyright}</p>
+        <h3>Title: {data.title}</h3>
+        <p>{data.copyright !== undefined ? `Image copyrighted by ${data.copyright}` : ''}</p>
         <p>{data.explanation}</p>
-        </div>
+        </Container>
     )
 }
 
